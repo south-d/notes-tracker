@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Notes",
+  "scopeName": "source.notes",
+  "patterns": [
+    {
+      "include": "#monthLine"
+    },
+    {
+      "include": "#dateLine"
+    },
+    {
+      "include": "#taskLine"
+    },
+    {
+      "include": "#sectionHeader"
+    },
+    {
+      "include": "#url"
+    }
+  ],
+  "repository": {
+    "monthLine": {
+      "match": "^\\s*\"\\d{2}-\\d{4}\".*$",
+      "name": "meta.month-line.notes",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "match": "\"\\d{2}-\\d{4}\"",
+              "name": "string.quoted.month.notes"
+            },
+            {
+              "match": "\\|.*$",
+              "name": "markup.italic.summary.notes"
+            }
+          ]
+        }
+      }
+    },
+    "dateLine": {
+      "match": "^\\s*\"\\d{2}-\\d{2}-\\d{4}[^\"]*\".*$",
+      "name": "meta.date-line.notes",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "match": "^\\s*\"\\d{2}-\\d{2}-\\d{4}[^\"]*\"",
+              "name": "string.quoted.date.notes"
+            },
+            {
+              "match": "\"[^\"]+\"",
+              "name": "string.quoted.goals.notes"
+            },
+            {
+              "match": "\\|.*$",
+              "name": "markup.italic.summary.notes"
+            }
+          ]
+        }
+      }
+    },
+    "sectionHeader": {
+      "match": "^\\s*#(?!\\s*-).+$",
+      "name": "comment.line.section.notes"
+    },
+    "url": {
+      "match": "https?://[^\\s<>\"')\\]]+",
+      "name": "markup.underline.link.notes"
+    },
+    "taskLine": {
+      "match": "^\\s*(#\\s*)?(-\\s+)(.+)$",
+      "name": "meta.task-line.notes",
+      "captures": {
+        "1": {
+          "name": "comment.line.done.notes"
+        },
+        "2": {
+          "name": "punctuation.definition.list.notes"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "#url"
+            },
+            {
+              "match": "\\++",
+              "name": "constant.numeric.time.notes"
+            },
+            {
+              "match": "=[^\\s=]+",
+              "name": "entity.name.tag.notes"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

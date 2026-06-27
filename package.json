@@ -1,0 +1,147 @@
+{
+  "name": "notes-tracker",
+  "displayName": "Notes Tracker",
+  "description": "Tasks, time logging and monthly summaries in plain .notes files",
+  "version": "0.1.0",
+  "publisher": "denis-yuzhanin",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denis-yuzhanin/notes-tracker"
+  },
+  "bugs": {
+    "url": "https://github.com/denis-yuzhanin/notes-tracker/issues"
+  },
+  "homepage": "https://github.com/denis-yuzhanin/notes-tracker#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "notes",
+    "tasks",
+    "todo",
+    "time tracking",
+    "journal",
+    "productivity"
+  ],
+  "galleryBanner": {
+    "color": "#1e3a5f",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onLanguage:notes"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "notes",
+        "aliases": [
+          "Notes"
+        ],
+        "extensions": [
+          ".notes"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "notes",
+        "scopeName": "source.notes",
+        "path": "./syntaxes/notes.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "notes.toggleDone",
+        "title": "Notes: Toggle Done",
+        "category": "Notes"
+      },
+      {
+        "command": "notes.addQuarter",
+        "title": "Notes: Add 15 Minutes (+)",
+        "category": "Notes"
+      },
+      {
+        "command": "notes.recalculate",
+        "title": "Notes: Recalculate Time Summaries",
+        "category": "Notes"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "notes.toggleDone",
+        "key": "ctrl+/",
+        "mac": "cmd+/",
+        "when": "editorTextFocus && editorLangId == notes"
+      },
+      {
+        "command": "notes.addQuarter",
+        "key": "ctrl+shift+.",
+        "mac": "cmd+shift+.",
+        "when": "editorTextFocus && editorLangId == notes"
+      }
+    ],
+    "configurationDefaults": {
+      "[notes]": {
+        "editor.semanticHighlighting.enabled": false
+      },
+      "editor.tokenColorCustomizations": {
+        "[*]": {
+          "textMateRules": [
+            {
+              "scope": [
+                "string.quoted.month.notes",
+                "meta.month-line.notes string.quoted"
+              ],
+              "settings": {
+                "foreground": "#4A9EFF",
+                "fontStyle": "bold"
+              }
+            },
+            {
+              "scope": [
+                "string.quoted.date.notes",
+                "meta.date-line.notes string.quoted"
+              ],
+              "settings": {
+                "foreground": "#6EB5FF",
+                "fontStyle": "bold"
+              }
+            },
+            {
+              "scope": "string.quoted.goals.notes",
+              "settings": {
+                "foreground": "#8FA8C3"
+              }
+            },
+            {
+              "scope": "markup.italic.summary.notes",
+              "settings": {
+                "foreground": "#7A8FA6",
+                "fontStyle": "italic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.3.3"
+  }
+}
