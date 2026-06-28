@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2
+
+- Replace README screenshot with demo GIF
+
+## 0.1.1
+
+- Add screenshot to README for Marketplace
+
 ## 0.1.0
 
 - Initial public release

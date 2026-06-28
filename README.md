@@ -1,5 +1,7 @@
 # Notes Tracker
 
+![Notes Tracker demo](https://raw.githubusercontent.com/south-d/notes-tracker/main/images/about.gif)
+
 Task and time tracking in plain `.notes` files — right inside VS Code and Cursor.
 
 Write tasks as text, log time with `+` (15 minutes each), tag with `=work`, and get automatic daily and monthly summaries. No account, no cloud, no database.

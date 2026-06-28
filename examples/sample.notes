@@ -1,9 +1,13 @@
-"05-2026" | 741.25h | 1.75h =work, 0.5h =friends, 0.5h =home
-    "24-05-2026 Monday" | 22h | 1h =work, 0.5h =friends, 0.5h =home
+"05-2026" | 741.75h | 1h =work, 0.5h =friends, 0.5h =home, 0.25h =family
+    "24-05-2026 Monday" | 23h | 0.5h =friends, 0.5h =home
         # - reply to intro email ++ =friends
         # - measure space for a new rug ++ =home
-        # - request a rough price quote ++ =work
-        # - back up phone data ++ =work
-    "25-05-2026 Tuesday" | 23.25h | 0.75h =work
-        # - tidy the balcony and try moving the vacuum outside
-        - some notes +++ =work
+    "25-05-2026 Tuesday" | 22.75h | 1h =work, 0.25h =family
+        # - call mom + =family
+        # - do some work ++++ =work
+
+    
+        
+
+        
+    
