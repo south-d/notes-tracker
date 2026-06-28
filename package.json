@@ -3,21 +3,22 @@
   "displayName": "Notes Tracker",
   "description": "Tasks, time logging and monthly summaries in plain .notes files",
   "version": "0.1.0",
-  "publisher": "denis-yuzhanin",
+  "publisher": "south-d",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/denis-yuzhanin/notes-tracker"
+    "url": "https://github.com/south-d/notes-tracker.git"
   },
   "bugs": {
-    "url": "https://github.com/denis-yuzhanin/notes-tracker/issues"
+    "url": "https://github.com/south-d/notes-tracker/issues"
   },
-  "homepage": "https://github.com/denis-yuzhanin/notes-tracker#readme",
+  "homepage": "https://github.com/south-d/notes-tracker#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
+    "Productivity",
     "Other"
   ],
   "keywords": [

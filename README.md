@@ -77,10 +77,14 @@ npm run package   # build .vsix
 
 ## Publishing
 
+Create a publisher at [marketplace.visualstudio.com/manage](https://marketplace.visualstudio.com/manage) with id `south-d`, then:
+
 ```bash
-npx @vscode/vsce login denis-yuzhanin
+npx @vscode/vsce login south-d
 npx @vscode/vsce publish
 ```
+
+Repository: [github.com/south-d/notes-tracker](https://github.com/south-d/notes-tracker)
 
 ## License
 
